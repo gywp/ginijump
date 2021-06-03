@@ -31,7 +31,7 @@ public class Destroy : MonoBehaviour
         else
         {
             myPlat = (GameObject)Instantiate(springPrefab, new Vector2(Random.Range(-2.5f, 2.2f), player.transform.position.y + (2 + Random.Range(0.5f, 20f))), Quaternion.identity);
-            myPlat = (GameObject)Instantiate(catPrefab, new Vector2(Random.Range(5f, 10.2f), player.transform.position.y + (2 + Random.Range(0.5f, 100f))), Quaternion.identity);
+            myPlat = (GameObject)Instantiate(catPrefab, new Vector2(Random.Range(-2.5f, 2.2f), player.transform.position.y + (2 + Random.Range(0.5f, 100f))), Quaternion.identity);
             myPlat = (GameObject)Instantiate(birdPrefab, new Vector2(Random.Range(-2.5f, 2.2f), player.transform.position.y + (2 + Random.Range(0.5f, 100f))), Quaternion.identity);
         }
 
