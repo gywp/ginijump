@@ -26,7 +26,7 @@ public class Destroy : MonoBehaviour
 
         if (Random.Range(1, 15) > 1)
         {
-            myPlat = (GameObject)Instantiate(platformPrefab, new Vector2(Random.Range(-2.5f, 2.2f), player.transform.position.y + (2 + Random.Range(0.5f,1f))), Quaternion.identity);
+            myPlat = (GameObject)Instantiate(platformPrefab, new Vector2(Random.Range(-2.3f, 2.2f), player.transform.position.y + (2 + Random.Range(0.5f,1f))), Quaternion.identity);
         }
         else
         {

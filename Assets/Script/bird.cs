@@ -26,4 +26,5 @@ public class bird : MonoBehaviour
         if (transform.position.x > 2.5f) is_right = false;
         if (transform.position.x < -2.2f) is_right = true;
     }
+    
 }

@@ -45,4 +45,28 @@ public class ButtonClick : MonoBehaviour
         if (CompareTag("France")) SceneManager.LoadScene("France");
         
     }
+    public void ChangeSceneBtn()
+    {
+        Time.timeScale = (isPaused) ? 1.0f : 1.0f;
+        switch (this.gameObject.name)
+        {
+            case "homebutton":
+                SceneManager.LoadScene("MainLayout");
+                break;
+            case "Multiplay Button ":
+                SceneManager.LoadScene(5);
+                break;
+            case "Home Button":
+                SceneManager.LoadScene(0);
+                break;
+            case "asd":
+                SceneManager.LoadScene(6);
+                break;
+            case "re":
+                SceneManager.LoadScene(0);
+                break;
+
+
+        }
+    }
 }

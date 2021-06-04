@@ -20,7 +20,6 @@ public class player1 : MonoBehaviour
     private bool isPaused;
     public AudioClip catchSound;
     public AudioClip dieSound;
-    public bool end = false;
     private AudioSource audioSource;
     
 
@@ -47,7 +46,7 @@ public class player1 : MonoBehaviour
             topScore = transform.position.y;
         }
         scoreText.text = "Score: " + Mathf.Round(topScore).ToString();
-        if (rb2d.velocity.y < -15)
+        if (rb2d.velocity.y < -10)
         {
             
             GameOver();
@@ -55,7 +54,7 @@ public class player1 : MonoBehaviour
     }
     void FixedUpdate()
     {
-        /* if (Application.platform == RuntimePlatform.Android)
+         if (Application.platform == RuntimePlatform.Android)
          {
              horizontal = Input.acceleration.x;
          }
@@ -66,26 +65,26 @@ public class player1 : MonoBehaviour
          if (Input.acceleration.x > 0)
          {
              gameObject.GetComponent<SpriteRenderer>().flipX = true;
-         }*/
-        moveInput = Input.GetAxis("Horizontal");
-        rb2d.velocity = new Vector2(moveInput * speed, rb2d.velocity.y);
+         }
+      
 
-      //  rb2d.velocity = new Vector2(Input.acceleration.x * 20f, rb2d.velocity.y);
+      rb2d.velocity = new Vector2(Input.acceleration.x * 10f, rb2d.velocity.y);
     }
     public void GameOver()
     {
         
-        end = true;
+       
         gameover.SetActive(true);
         SoundPlay(dieSound);
         speed = 0;
-        if (topScore > PlayerPrefs.GetInt("score"))
+        if (topScore > PlayerPrefs.GetFloat("BestScore"))
         {
-            PlayerPrefs.SetFloat("score", topScore);
+            PlayerPrefs.SetFloat("BestScore", topScore);
         }
+
         endscoreText.text = topScore.ToString("N0");
-        highscoreText.text = PlayerPrefs.GetFloat("score").ToString("N0");
-        
+        highscoreText.text = PlayerPrefs.GetFloat("BestScore").ToString("N0");
+
     }
     
    public void OnPauseClick()

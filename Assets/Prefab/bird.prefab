@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4960484266948158453}
   - component: {fileID: 4960484266948158458}
   - component: {fileID: 4633897806855130417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bird
   m_TagString: bird
   m_Icon: {fileID: 0}
@@ -113,5 +113,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSpeed: 0
-  player: {fileID: 0}
-  bSound: {fileID: 0}
