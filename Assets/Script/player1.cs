@@ -54,7 +54,7 @@ public class player1 : MonoBehaviour
     }
     void FixedUpdate()
     {
-         if (Application.platform == RuntimePlatform.Android)
+        /* if (Application.platform == RuntimePlatform.Android)
          {
              horizontal = Input.acceleration.x;
          }
@@ -66,9 +66,9 @@ public class player1 : MonoBehaviour
          {
              gameObject.GetComponent<SpriteRenderer>().flipX = true;
          }
-      
-
-      rb2d.velocity = new Vector2(Input.acceleration.x * 10f, rb2d.velocity.y);
+      rb2d.velocity = new Vector2(Input.acceleration.x * 10f, rb2d.velocity.y);*/
+        moveInput = Input.GetAxis("Horizontal");
+        rb2d.velocity = new Vector2(moveInput * speed, rb2d.velocity.y);
     }
     public void GameOver()
     {
