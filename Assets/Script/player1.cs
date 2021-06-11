@@ -53,21 +53,23 @@ public class player1 : MonoBehaviour
         }
     }
     void FixedUpdate()
-    {
-         if (Application.platform == RuntimePlatform.Android)
-         {
-             horizontal = Input.acceleration.x;
-         }
-         if (Input.acceleration.x < 0)
-         {
-             gameObject.GetComponent<SpriteRenderer>().flipX = false;
-         }
-         if (Input.acceleration.x > 0)
-         {
-             gameObject.GetComponent<SpriteRenderer>().flipX = true;
-         }
-      rb2d.velocity = new Vector2(Input.acceleration.x * 10f, rb2d.velocity.y);
-       
+    { 
+        if (Application.platform == RuntimePlatform.Android)
+          {
+              horizontal = Input.acceleration.x;
+          }
+          if (Input.acceleration.x < 0)
+          {
+              gameObject.GetComponent<SpriteRenderer>().flipX = false;
+          }
+          if (Input.acceleration.x > 0)
+          {
+              gameObject.GetComponent<SpriteRenderer>().flipX = true;
+          }
+       rb2d.velocity = new Vector2(Input.acceleration.x * 10f, rb2d.velocity.y);
+      /*  moveInput = Input.GetAxis("Horizontal");
+        rb2d.velocity = new Vector2(moveInput * speed, rb2d.velocity.y);*/
+
     }
     public void GameOver()
     {
